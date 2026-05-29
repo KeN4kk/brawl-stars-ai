@@ -1,0 +1,55 @@
+# Game Configuration
+game:
+  map_width: 800
+  map_height: 600
+  max_players: 8
+  game_duration: 180  # seconds
+  spawn_delay: 2
+  
+# Agent Configuration
+agent:
+  num_agents: 8
+  observation_space: 42
+  action_space: 6
+  max_health: 100
+  max_ammo: 12
+  ammo_regen_rate: 2
+  
+# Training Configuration
+training:
+  episodes: 5000
+  max_steps_per_episode: 500
+  batch_size: 32
+  learning_rate: 0.001
+  gamma: 0.99
+  epsilon_start: 1.0
+  epsilon_end: 0.01
+  epsilon_decay: 0.995
+  target_update_frequency: 10
+  buffer_size: 100000
+  
+# Network Architecture
+network:
+  hidden_layers: [256, 256, 128]
+  activation: relu
+  dropout: 0.2
+  
+# PPO Configuration
+ppo:
+  num_epochs: 10
+  clip_ratio: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  
+# Visualization
+visualization:
+  enabled: true
+  render_frequency: 10
+  save_plots: true
+  plots_dir: "./plots"
+  
+# Logging
+logging:
+  level: INFO
+  log_dir: "./logs"
+  tensorboard_dir: "./runs"
